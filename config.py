@@ -7,7 +7,7 @@ import streamlit as st
 
 class Config:
     """Configuration management for the app"""
-    
+
     @staticmethod
     def get_gemini_api_key():
         """Get Gemini API key from secrets or environment"""
@@ -17,7 +17,7 @@ class Config:
         except:
             pass
         return os.getenv('GEMINI_API_KEY', '')
-    
+
     @staticmethod
     def get_openai_api_key():
         """Get OpenAI API key from secrets or environment"""
@@ -27,7 +27,7 @@ class Config:
         except:
             pass
         return os.getenv('OPENAI_API_KEY', '')
-    
+
     @staticmethod
     def get_anthropic_api_key():
         """Get Anthropic API key from secrets or environment"""
@@ -37,7 +37,7 @@ class Config:
         except:
             pass
         return os.getenv('ANTHROPIC_API_KEY', '')
-    
+
     @staticmethod
     def get_all_api_keys():
         """Get all configured API keys"""
@@ -46,15 +46,17 @@ class Config:
             'openai': Config.get_openai_api_key(),
             'anthropic': Config.get_anthropic_api_key()
         }
-    
+
     # Model configurations - focused on best reasoning/thinking models
+    # Updated Gemini models to the latest 2.5 family.
     AI_MODELS = {
         'gemini': {
             'name': 'Google Gemini',
             'models': [
-                {'id': 'gemini-1.5-pro', 'name': 'Gemini 1.5 Pro', 'description': 'Best for complex analysis and reasoning'},
-                {'id': 'gemini-1.5-flash', 'name': 'Gemini 1.5 Flash', 'description': 'Faster, good for simpler tasks'},
-                {'id': 'gemini-exp-1206', 'name': 'Gemini Experimental', 'description': 'Latest experimental features'},
+                {'id': 'gemini-2.5-pro', 'name': 'Gemini 2.5 Pro', 'description': 'Most capable model for highly complex tasks and coding'},
+                {'id': 'gemini-2.5-flash', 'name': 'Gemini 2.5 Flash', 'description': 'Best for fast performance on everyday tasks'},
+                {'id': 'gemini-2.5-flash-lite', 'name': 'Gemini 2.5 Flash-Lite', 'description': 'Best for high-volume, cost-efficient tasks'},
+                {'id': 'gemini-2.0-flash', 'name': 'Gemini 2.0 Flash', 'description': 'Next-gen features, speed, and real-time streaming'},
             ]
         },
         'openai': {
@@ -76,12 +78,12 @@ class Config:
             ]
         }
     }
-    
+
     # Analysis defaults
     DEFAULT_MAX_QUERIES = 20
     DEFAULT_MAX_TOPICS = 15
     DEFAULT_ANALYSIS_DEPTH = "Standard"
-    
+
     # Query Fan-Out Variant Types (based on Google's system)
     VARIANT_TYPES = {
         'equivalent': 'Alternative ways to ask the same question',
@@ -92,10 +94,10 @@ class Config:
         'specification': 'More detailed or specific versions',
         'clarification': 'Questions to clarify user intent'
     }
-    
+
     # Content Analysis Settings
     MIN_CONTENT_LENGTH = 100
     MAX_CONTENT_LENGTH = 50000
-    
+
     # User Agent for web scraping
     USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
