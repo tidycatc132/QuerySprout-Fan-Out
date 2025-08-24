@@ -663,9 +663,9 @@ class ContentAnalyzer:
 
         Provide the following ACTIONABLE optimization report:
 
-        # 📊 QUERY FAN-OUT OPTIMIZATION REPORT
+        # QUERYSPROUT FAN-OUT OPTIMIZATION REPORT
 
-        ## 1. 🎯 QUICK WIN: ANSWER BOX OPTIMIZATION
+        ## 1. QUICK WIN: ANSWER BOX OPTIMIZATION
 
         ### Current Opening (if exists)
         ```
@@ -685,7 +685,7 @@ class ContentAnalyzer:
         - Why this works better: [Brief explanation]
         - Expected impact: [Specific ranking/CTR improvement]
 
-        ## 2. 🔍 QUERY VARIANT COVERAGE ANALYSIS
+        ## 2. QUERY VARIANT COVERAGE ANALYSIS
 
         Based on "{primary_keyword}", these query variants MUST be addressed:
 
@@ -714,7 +714,7 @@ class ContentAnalyzer:
         [Write another 150-200 words of ready-to-use content]
         ```
 
-        ## 3. 📝 CRITICAL CONTENT REWRITES
+        ## 3. CRITICAL CONTENT REWRITES
 
         ### REWRITE 1: [Specific Section Name]
 
@@ -741,7 +741,7 @@ class ContentAnalyzer:
         [Complete rewritten section]
         ```
 
-        ## 4. 🏗️ STRUCTURAL IMPROVEMENTS
+        ## 4. STRUCTURAL IMPROVEMENTS
 
         ### Current Structure Problem
         [Identify specific structural issue]
@@ -757,7 +757,7 @@ class ContentAnalyzer:
         4. Add new section after [specific location]: "[New Section Title]"
         ```
 
-        ## 5. 🎨 METADATA OPTIMIZATION
+        ## 5. METADATA OPTIMIZATION
 
         ### Current Title Tag
         ```
@@ -779,7 +779,7 @@ class ContentAnalyzer:
         [New description that's exactly 150-160 characters, includes primary keyword, has clear CTA]
         ```
 
-        ## 6. 📋 FAQ SECTION TO ADD (Copy-Paste Ready)
+        ## 6. FAQ SECTION TO ADD (Copy-Paste Ready)
 
         Add this exact FAQ section to capture more query variants:
 
@@ -799,7 +799,7 @@ class ContentAnalyzer:
         [40-60 word answer]
         ```
 
-        ## 7. 🔗 INTERNAL LINKING OPTIMIZATION
+        ## 7. INTERNAL LINKING OPTIMIZATION
 
         ### Links to ADD:
         1. In paragraph about [topic], add link to [URL] with anchor text "[exact anchor text]"
@@ -810,7 +810,7 @@ class ContentAnalyzer:
         1. Remove link in [location] - reason: [specific reason]
         2. Change "[current anchor]" to "[new anchor]" in [location]
 
-        ## 8. 📊 SCHEMA MARKUP TO IMPLEMENT
+        ## 8. SCHEMA MARKUP TO IMPLEMENT
 
         ### FAQ Schema (Copy-Paste Ready)
         ```json
@@ -830,7 +830,7 @@ class ContentAnalyzer:
         }}
         ```
 
-        ## 9. 🚀 IMPLEMENTATION PRIORITY
+        ## 9. IMPLEMENTATION PRIORITY
 
         ### DO TODAY (15 minutes):
         1. [ ] Copy-paste the new opening paragraph
@@ -847,7 +847,7 @@ class ContentAnalyzer:
         2. [ ] Update internal linking
         3. [ ] Create supporting content for query variants
 
-        ## 10. 📈 EXPECTED RESULTS
+        ## 10. EXPECTED RESULTS
 
         After implementing these SPECIFIC changes:
         - **Week 1**: Expect improved CTR (+15-20%) from better meta tags
@@ -855,7 +855,7 @@ class ContentAnalyzer:
         - **Month 2**: Achieve page 1 rankings for additional 3-5 long-tail variants
         - **Month 3**: Potential AI Overview inclusion for primary keyword
 
-        ## 11. 🎯 COMPETITOR GAP ANALYSIS
+        ## 11. COMPETITOR GAP ANALYSIS
 
         """
 
@@ -932,7 +932,7 @@ class UIHelpers:
         with col1:
             # Markdown export
             st.download_button(
-                label="📥 Download Analysis (Markdown)",
+                label="Download Analysis (Markdown)",
                 data=analysis,
                 file_name=f"query_fanout_{mode}_{timestamp}.md",
                 mime="text/markdown"
@@ -982,7 +982,7 @@ Model: {settings.get('model', 'Unknown')}
 """
 
             st.download_button(
-                label="📄 Download Full Report",
+                label="Download Full Report",
                 data=report,
                 file_name=f"query_fanout_report_{timestamp}.md",
                 mime="text/markdown"
@@ -1001,7 +1001,7 @@ Model: {settings.get('model', 'Unknown')}
             }
 
             st.download_button(
-                label="💾 Download JSON",
+                label="Download JSON",
                 data=json.dumps(json_data, indent=2),
                 file_name=f"query_fanout_data_{timestamp}.json",
                 mime="application/json"
