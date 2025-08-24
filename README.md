@@ -2,7 +2,7 @@
 
 A powerful Streamlit application that uses Google's Query Fan-Out methodology to help you optimize content for AI-powered search results and Google AI Overviews.
 
-## 🚀 Features
+## Features
 
 ### Two Analysis Modes:
 
@@ -19,9 +19,9 @@ A powerful Streamlit application that uses Google's Query Fan-Out methodology to
    - Get specific rewrite recommendations
    - Competitive analysis against other URLs
 
-## 🎯 Query Fan-Out Methodology
+## Query Fan-Out Methodology
 
-Based on [Google's Query Fan-Out System](https://dejan.ai/blog/googles-query-fan-out-system-a-technical-overview/), this tool generates 7 types of query variants:
+Based on [Google's Query Fan-Out System], this tool generates 7 types of query variants:
 
 - **Equivalent Queries** - Alternative ways to ask the same question
 - **Follow-up Queries** - Logical next questions
@@ -31,7 +31,7 @@ Based on [Google's Query Fan-Out System](https://dejan.ai/blog/googles-query-fan
 - **Specification Queries** - More detailed versions
 - **Clarification Queries** - Intent clarification
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 
@@ -69,7 +69,7 @@ Based on [Google's Query Fan-Out System](https://dejan.ai/blog/googles-query-fan
    streamlit run app.py
    ```
 
-## 📊 How to Use
+## How to Use
 
 ### For New Content Planning:
 
@@ -92,7 +92,7 @@ Based on [Google's Query Fan-Out System](https://dejan.ai/blog/googles-query-fan
 6. Click "Analyze & Optimize Content"
 7. Implement the specific recommendations provided
 
-## 🎨 Configuration Options
+## Configuration Options
 
 ### Analysis Settings:
 - **Gemini Model**: Choose between Flash (faster) or Pro (more capable)
@@ -110,7 +110,7 @@ Based on [Google's Query Fan-Out System](https://dejan.ai/blog/googles-query-fan
 - Snippet optimization
 - People Also Ask optimization
 
-## 📋 Output Reports
+## Output Reports
 
 The tool provides detailed reports including:
 
@@ -126,21 +126,11 @@ Reports can be exported in:
 - JSON format (for programmatic use)
 - Full report format (comprehensive analysis)
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## 📄 License
 
 This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
-
-- Built with [Streamlit](https://streamlit.io/)
-- Powered by [Google's Gemini AI](https://deepmind.google/technologies/gemini/)
-- Based on [Google's Query Fan-Out System research](https://dejan.ai/blog/googles-query-fan-out-system-a-technical-overview/)
-
-## 💡 Tips for Best Results
+## For Best Results
 
 ### New Content Planning:
 - Start with 5-10 core queries
@@ -155,7 +145,7 @@ This project is licensed under the MIT License.
 - Ensure URLs are publicly accessible
 - Review all recommendations before implementing
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 **Content fetching fails:**
 - Check if the URL is publicly accessible
