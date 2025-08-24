@@ -37,7 +37,7 @@ if 'api_keys' not in st.session_state:
         }
 
 # Title and description
-st.title("🔍 QuerySprout Fan-Out Analysis Tool")
+st.title("QuerySprout Fan-Out Analysis Tool")
 st.markdown("""
 Analyze and optimize content using Google's Query Fan-Out methodology to maximize 
 visibility in AI-powered search results and AI Overviews.
@@ -50,8 +50,8 @@ with col2:
         "Choose your analysis mode:",
         options=['new_content', 'optimize_existing'],
         format_func=lambda x: {
-            'new_content': '✍️ New Content Planning',
-            'optimize_existing': '🔧 Optimize Existing Content'
+            'new_content': 'New Content Planning',
+            'optimize_existing': 'Optimize Existing Content'
         }[x],
         horizontal=True,
         help="New content mode for planning, Optimize mode for improving existing pages"
@@ -62,10 +62,10 @@ st.markdown("---")
 
 # Sidebar configuration
 with st.sidebar:
-    st.header("⚙️ Configuration")
+    st.header("Configuration")
     
     # API Keys Section
-    st.subheader("🔑 API Keys Configuration")
+    st.subheader("API Keys Configuration")
     
     with st.expander("API Keys Setup", expanded=True):
         st.markdown("Enter API keys for the providers you want to use:")
@@ -139,12 +139,12 @@ with st.sidebar:
     if configured_providers:
         st.success(f"✅ Configured: {', '.join(configured_providers)}")
     else:
-        st.warning("⚠️ No API keys configured yet")
+        st.warning("No API keys configured yet")
     
     st.markdown("---")
     
     # Model Selection
-    st.subheader("🤖 AI Model Selection")
+    st.subheader("AI Model Selection")
     
     # Only show providers that have API keys configured
     available_providers = [p for p, k in st.session_state.api_keys.items() if k]
@@ -183,10 +183,10 @@ with st.sidebar:
     st.markdown("---")
     
     # Analysis settings
-    st.subheader("📊 Analysis Settings")
+    st.subheader("Analysis Settings")
     
-    # Query Fan-Out Configuration
-    st.subheader("🎯 Query Fan-Out Configuration")
+    # QuerySprout Fan-Out Configuration
+    st.subheader("Query Fan-Out Configuration")
     
     # Query Variant Types to include
     variant_types = st.multiselect(
@@ -209,9 +209,9 @@ with st.sidebar:
         "Target Optimization Type:",
         options=["ai_overviews", "ai_mode", "both"],
         format_func=lambda x: {
-            'ai_overviews': '🔍 AI Overviews - Quick answers & featured snippets',
-            'ai_mode': '🧠 AI Mode - Complex query fan-out & research',
-            'both': '🎯 Both - Comprehensive optimization'
+            'ai_overviews': 'AI Overviews - Quick answers & featured snippets',
+            'ai_mode': 'AI Mode - Complex query fan-out & research',
+            'both': 'Both - Comprehensive optimization'
         }[x],
         help="Choose your optimization target"
     )
@@ -286,11 +286,11 @@ if st.session_state.mode == 'new_content':
             "Enter queries for new content planning (one per line)",
             height=250,
             placeholder="""Example queries:
-query fan out SEO
-optimizing for Google AI mode
-AI overviews content strategy
-semantic SEO techniques
-entity-based content optimization""",
+fire damage restoration company
+water heater repair near me
+bookkeeping firms
+financial wealth management firm
+how much would it cost to replace a commercial roof""",
             help="Enter queries you want to target with new content"
         )
         
@@ -333,7 +333,7 @@ entity-based content optimization""",
     # Analysis button for new content mode
     button_disabled = not available_providers or not queries_list
     
-    if st.button("🚀 Run Query Fan-Out Analysis", type="primary", disabled=button_disabled):
+    if st.button("🚀 Run QuerySprout Fan-Out Analysis", type="primary", disabled=button_disabled):
         if queries_list and ai_provider:
             # Get the API key for selected provider
             api_key = st.session_state.api_keys.get(ai_provider)
@@ -384,7 +384,7 @@ entity-based content optimization""",
                             }
                             
                             st.markdown("---")
-                            st.header("📋 Query Fan-Out Analysis Results")
+                            st.header("📋 QuerySprout Fan-Out Analysis Results")
                             st.markdown(analysis)
                             
                             # Export options
@@ -421,7 +421,7 @@ elif st.session_state.mode == 'optimize_existing':
         # Primary keyword
         primary_keyword = st.text_input(
             "Primary Target Keyword",
-            placeholder="e.g., query fan out SEO",
+            placeholder="e.g., fire damage restoration company",
             help="The main keyword you're targeting with this content"
         )
         
@@ -443,7 +443,7 @@ elif st.session_state.mode == 'optimize_existing':
             )
     
     with col2:
-        st.header("📊 Analysis Options")
+        st.header("Analysis Options")
         
         # Content analysis options
         analyze_readability = st.checkbox("Analyze readability", value=True)
@@ -452,7 +452,7 @@ elif st.session_state.mode == 'optimize_existing':
         analyze_gaps = st.checkbox("Identify content gaps", value=True)
         
         # Quick tips
-        with st.expander("💡 Optimization Tips"):
+        with st.expander("Optimization Tips"):
             st.markdown("""
             **For best results:**
             - Use your main target keyword
@@ -472,7 +472,7 @@ elif st.session_state.mode == 'optimize_existing':
             if not api_key:
                 st.error(f"No API key configured for {Config.AI_MODELS[ai_provider]['name']}")
             else:
-                with st.spinner("📥 Fetching and analyzing content..."):
+                with st.spinner("Fetching and analyzing content..."):
                     try:
                         # Fetch the content
                         content_data = ContentAnalyzer.fetch_content(content_url)
@@ -509,7 +509,7 @@ elif st.session_state.mode == 'optimize_existing':
                             UIHelpers.display_content_metrics(content_data)
                             
                             # Run the analysis
-                            with st.spinner(f"🤖 Running Query Fan-Out analysis with {Config.AI_MODELS[ai_provider]['name']} ({selected_model})..."):
+                            with st.spinner(f"Running QuerySprout Fan-Out analysis with {Config.AI_MODELS[ai_provider]['name']} ({selected_model})..."):
                                 analysis = ContentAnalyzer.analyze_existing_content(
                                     content_data,
                                     primary_keyword,
